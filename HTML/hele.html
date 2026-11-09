@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hele</title>
+  <link rel="stylesheet" href="hele.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">C</div>
+      <span class="label">Hele</span>
+    </div>
+
+    <nav class="nav">
+      <button class="link active" data-view="home"><span class="ico">⌂</span><span class="label">Home</span></button>
+      <button class="link" data-view="search"><span class="ico">⌕</span><span class="label">Search</span></button>
+      <button class="link" data-view="library"><span class="ico">▥</span><span class="label">Library</span></button>
+      <button class="link" id="newPlaylist"><span class="ico">＋</span><span class="label">Create playlist</span></button>
+    </nav>
+
+    <ul id="playlists"></ul>
+  </aside>
+
+  <main class="main">
+    <input id="search" type="search" placeholder="What do you want to play?" aria-label="Search tracks">
+    <section class="hero">
+      <h1 id="heroTitle"></h1>
+      <p class="muted" id="heroText"></p>
+      <button id="delPlaylist" hidden>🗑 Delete playlist</button>
+    </section>
+    <div id="sections"></div>
+  </main>
+
+  <aside class="now">
+    <div class="now-cover" id="nowCover"></div>
+    <h2 id="nowTitle"></h2>
+    <p id="nowArtist"></p>
+    <h3>Queue</h3>
+    <ul id="queue"></ul>
+  </aside>
+
+  <footer class="player">
+    <div class="track">
+      <div class="thumb" id="pCover"></div>
+      <div><b id="pTitle"></b><small id="pArtist"></small></div>
+    </div>
+
+    <div class="center">
+      <div class="controls">
+        <button id="shuffleBtn" aria-label="Shuffle">⇄</button>
+        <button id="prevBtn" aria-label="Previous">⏮</button>
+        <button id="playBtn" aria-label="Play or pause">▶</button>
+        <button id="nextBtn" aria-label="Next">⏭</button>
+        <button id="loopBtn" aria-label="Loop">↻</button>
+      </div>
+      <div class="timeline">
+        <span id="elapsed">0:00</span>
+        <input id="seek" type="range" min="0" max="100" value="0" step="0.1" aria-label="Progress">
+        <span id="remaining">-0:00</span>
+      </div>
+    </div>
+
+    <div class="vol">
+      <button id="muteBtn" aria-label="Mute">🔈</button>
+      <input id="volume" type="range" min="0" max="1" step="0.01" value="1" aria-label="Volume">
+    </div>
+  </footer>
+
+  <audio id="audio"></audio>
+  <script src="hele.js"></script>
+</body>
+</html>
