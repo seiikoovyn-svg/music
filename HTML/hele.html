@@ -55,6 +55,7 @@
         <button id="playBtn" aria-label="Play or pause">▶</button>
         <button id="nextBtn" aria-label="Next">⏭</button>
         <button id="loopBtn" aria-label="Loop">↻</button>
+        <button id="lyricsBtn" aria-label="Lyrics">♫</button>
       </div>
       <div class="timeline">
         <span id="elapsed">0:00</span>
@@ -68,7 +69,23 @@
       <input id="volume" type="range" min="0" max="1" step="0.01" value="1" aria-label="Volume">
     </div>
   </footer>
+  
+<!-- Fullscreen Lyrics -->
+<div id="lyricsScreen" class="lyrics-screen">
+  <button id="closeLyrics" class="close-lyrics">✕</button>
 
+  <div class="lyrics-content">
+    <div class="lyrics-cover" id="lyricsCover"></div>
+    <p class="lyrics-label">NOW PLAYING</p>
+    <h1 id="lyricsTitle"></h1>
+    <p id="lyricsArtist"></p>
+
+    <div class="lyrics-text" id="lyricsText">
+
+    </div>
+  </div>
+</div>
+  
   <audio id="audio"></audio>
   <script src="hele.js"></script>
 </body>
