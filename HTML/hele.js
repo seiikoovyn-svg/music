@@ -1,4 +1,3 @@
-
 const base = "https://raw.githubusercontent.com/seiikoovyn-svg/music/main/";
 
 const songInfo = [
@@ -838,3 +837,39 @@ $("lyricsBtn").onclick = () => {
 $("closeLyrics").onclick = () => {
   $("lyricsScreen").classList.remove("show");
 };
+function show(v, playlistName = "") {
+  view = v;
+  activePlaylist = playlistName;
+
+  const hour = new Date().getHours();
+
+  const hello = hour < 12
+    ? "Easy mornings"
+    : hour < 18
+      ? "Afternoon focus"
+      : "Late night listening";
+
+  const titles = {
+    home: hello,
+    search: "Search",
+    library: "Your library",
+    playlist: playlistName
+  };
+
+  $("heroTitle").textContent = titles[v];
+  $("heroText").textContent =
+    v === "home" ? "Songs you've been playing lately." : "";
+
+  document.querySelectorAll("[data-view]").forEach((b) =>
+    b.classList.toggle("active", b.dataset.view === v)
+  );
+
+  const pl = playlists.find((p) => p.name === playlistName);
+
+  pages.playlist = pl ? [["Songs", pl.songs]] : [];
+
+  $("delPlaylist").hidden = v !== "playlist";
+
+  renderSections();
+  renderPlaylists();
+}
