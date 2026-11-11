@@ -113,7 +113,7 @@ function renderPlaylists() {
     return `
       <li>
         <button class="link${on}" data-p="${i}">
-          <span class="ico">🎵</span>
+          <span class="ico">♫</span>
           <span class="label">${p.name}</span>
         </button>
       </li>
