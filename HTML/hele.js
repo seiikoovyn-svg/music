@@ -3,7 +3,7 @@ const base = "https://raw.githubusercontent.com/seiikoovyn-svg/music/main/";
 const songInfo = [
 ["Too Good To Say Goodbye", "Bruno Mars", "bruno mars - too good to say goodbye (lyrics).mp3", "bruno.jpg"],
 ["I Think You Were In My Profile Picture Once", "Modern Baseball", "I Think You Were in My Profile Picture Once.mp3", "mobo.jpg"],
-["Smoking Out The Window", "Bruno Mars", "Bruno Mars, Anderson .Paak, Silk Sonic - Smokin Out The Window (Lyrics).mp3", "smoke.jpg"],
+["Smoking Out The Window", "Bruno Mars", "Smokin+Out+The+Window [yHrB1V1MWJU].mp3", "smoke.jpg"],
 ["Dance With Me", "beabadoobee", "beabadoobee - Dance with Me.mp3", "beabasta.jpg"],
 ["All I Ask", "Adele", "All I Ask.mp3", "adili.jpg"],
 ["Chimacum Rain", "Linda Perhacs", "Chimacum Rain.mp3", "bastakato.jpg"],
@@ -470,7 +470,62 @@ const songLyrics = [
 { time: 70.89, text: "We won't speak like this again" }
 ],
 
-"", // Smoking Out The Window
+// Smoking Out The Window
+
+  
+[
+  { time: 0.24, text: "Wait a minute, this love started out so timid and so sweet" },
+  { time: 3.87, text: "But now she got me (smokin' out the window)" },
+  { time: 11.40, text: "Must've spent thirty-five, forty-five thousand up in Tiffany's (oh, no)" },
+  { time: 16.88, text: "Got her badass kids runnin' 'round my whole crib" },
+  { time: 20.16, text: "Like it's Chuck E Cheese" },
+  { time: 23.01, text: "Put me in a jam with her ex-man in the UFC" },
+  { time: 27.97, text: "Can't believe it (can't believe it)" },
+  { time: 30.36, text: "I'm in disbelief" },
+  { time: 32.15, text: "This bitch got me payin' her rent, payin' for trips" },
+  { time: 36.75, text: "Diamonds on her neck, diamonds on her wrist" },
+  { time: 39.09, text: "And here I am all alone (all alone)" },
+  { time: 42.71, text: "I'm so cold, I'm so cold" },
+  { time: 44.34, text: "You got me out here" },
+  { time: 46.30, text: "Smokin' out the window (smokin' out the window)" },
+  { time: 51.17, text: "Singin': How could she do this to me? (How could she do this to me?)" },
+  { time: 57.60, text: "I thought that girl belonged to only me" },
+  { time: 62.74, text: "But I was wrong" },
+  { time: 65.85, text: "'Cause she belong to everybody, everybody, oh" },
+  { time: 76.80, text: "Just the other night she was grippin' on me tight" },
+  { time: 79.20, text: "Screamin': Hercules (Hercules, Hercules)" },
+  { time: 82.40, text: "Got me in the club lookin' for a new love" },
+  { time: 85.17, text: "Someone help me please (help me please, help me please)" },
+  { time: 88.43, text: "Baby, why you doin' this?" },
+  { time: 90.09, text: "Why you doin' this to me, girl?" },
+  { time: 93.91, text: "Not to be dramatic, but I wanna die" },
+  { time: 97.36, text: "This bitch got me payin' her rent, payin' for trips" },
+  { time: 101.90, text: "Diamonds on her neck, diamonds on her wrist" },
+  { time: 103.93, text: "And here I am all alone (all alone)" },
+  { time: 107.65, text: "I'm so cold, I'm so cold" },
+  { time: 109.18, text: "You got me out here" },
+  { time: 110.87, text: "Smokin' out the window (smokin' out the window of the Benzo, the Benzo)" },
+  { time: 116.15, text: "Singin': How could she do this to me? (How? How could you do this to me?)" },
+  { time: 122.65, text: "I thought that girl belonged to only me (one things fasho, one things fasho)" },
+  { time: 128.02, text: "But I was wrong (I was wrong)" },
+  { time: 132.12, text: "'Cause she belong (she belong to) to everybody, everybody (yeah, she belong to everybody)" },
+  { time: 137.61, text: "That girl there, she belong to everybody" },
+  { time: 140.33, text: "(Oh, no)" },
+  { time: 143.42, text: "Look here, baby" },
+  { time: 144.31, text: "I hope you found whatever it is that you need" },
+  { time: 147.39, text: "But I also hope that your triflin' ass is walkin' 'round bare foot in these streets" },
+  { time: 151.88, text: "Look out" },
+  { time: 152.76, text: "Girl, it breaks my heart that you ain't right here with me" },
+  { time: 157.27, text: "Now I gotta give you back (gotta give you back)" },
+  { time: 160.38, text: "To the city, oh, you got me" },
+  { time: 163.99, text: "Smokin' out the window (oh)" },
+  { time: 168.95, text: "Singin': How could she do this to me? (How could you? How could you do this, baby?)" },
+  { time: 175.15, text: "I thought that girl belonged to only me" },
+  { time: 180.39, text: "But I was wrong (I was wrong)" },
+  { time: 183.67, text: "'Cause she belong (she belong) to everybody, everybody (yeah, she belong to everybody)" },
+  { time: 191.37, text: "She belong to everybody, oh" }
+],
+
 
 // Dance With Me
 
@@ -543,6 +598,7 @@ const songLyrics = [
 { time: 14.86, text: "Every day since I came" },
 { time: 18.52, text: "And the lichen covers rocks" },
 { time: 21.56, text: "And the green hides everything" },
+
 { time: 24.15, text: "Chimacum rain" },
 { time: 26.33, text: "And the rain, and the rain, and the rain (rain)" },
 { time: 31.91, text: "And the rain, and the rain, and the rain (rain)" },
@@ -625,7 +681,7 @@ const songLyrics = [
 { time: 138.88, text: "Sa langit na ikaw ay muling matanaw" },
 { time: 143.27, text: "Sagada, ang tagpuan kung sa'n itinakdang magwakas" },
 { time: 149.17, text: "Ang kwento ng ako at ikaw" },
-{ time: 153.71, text: "Ikaw ang natitirang takbuhan" },
+{ tim: 153.71, text: "Ikaw ang natitirang takbuhan" },
 { time: 161.40, text: "Ng pusong ligaw at giniginaw" },
 { time: 189.51, text: "Sagada, kung sa'n ikaw ay bumitaw" },
 { time: 194.08, text: "Kung sa'n binulong ang lahat ng sigaw" },
