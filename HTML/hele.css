@@ -537,3 +537,133 @@ object-fit: cover;
 border-radius: inherit;
 display: block;
 }
+/* =====================================================
+   EXTRA DESIGNS v2 (additive only, safe to delete)
+   ===================================================== */
+
+/* 1. Cards rise in one after another */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px) scale(.97); }
+}
+.card { position: relative; animation: rise .6s cubic-bezier(.2, .8, .2, 1) backwards; }
+.card:nth-child(2) { animation-delay: .05s; }
+.card:nth-child(3) { animation-delay: .10s; }
+.card:nth-child(4) { animation-delay: .15s; }
+.card:nth-child(5) { animation-delay: .20s; }
+.card:nth-child(6) { animation-delay: .25s; }
+.card:nth-child(7) { animation-delay: .30s; }
+.card:nth-child(8) { animation-delay: .35s; }
+
+/* 2. Soft pink halo appears behind a card on hover */
+.card::before {
+  content: "";
+  position: absolute; inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(circle at 50% 0%, rgba(244,166,192,.35), transparent 70%);
+  opacity: 0;
+  transition: opacity .35s;
+  pointer-events: none;
+}
+.card:hover::before { opacity: 1; }
+
+/* 3. Cover art zooms slightly on hover */
+.art { transition: transform .4s cubic-bezier(.2, .8, .2, 1); }
+.card:hover .art { transform: scale(1.04); }
+
+/* 4. Hero title: slow shimmering gradient */
+@keyframes shimmer {
+  to { background-position: 200% center; }
+}
+.hero h1 {
+  background: linear-gradient(95deg, #fff 0%, var(--pink) 30%, var(--mauve) 55%, var(--pink) 80%, #fff 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 10s linear infinite;
+}
+
+/* 5. Section headings get a glowing accent line */
+.main h2 { position: relative; padding-bottom: 10px; }
+.main h2::after {
+  content: "";
+  position: absolute; left: 0; bottom: 0;
+  width: 44px; height: 3px; border-radius: 99px;
+  background: linear-gradient(90deg, var(--pink), var(--mauve));
+  box-shadow: 0 0 14px var(--pink-glow);
+  transition: width .4s ease;
+}
+.main h2:hover::after { width: 90px; }
+
+/* 6. Sidebar icons react on hover; active icon glows */
+.link .ico { transition: transform .25s cubic-bezier(.2, .8, .2, 1); }
+.link:hover .ico { transform: scale(1.18) rotate(-6deg); }
+.link.active .ico { filter: drop-shadow(0 0 8px var(--pink)); }
+
+/* 7. Logo pulses softly */
+@keyframes logoPulse {
+  0%, 100% { box-shadow: 0 4px 18px var(--pink-glow), inset 0 1px 0 rgba(255,255,255,.4); }
+  50% { box-shadow: 0 4px 30px rgba(244,166,192,.6), inset 0 1px 0 rgba(255,255,255,.4); }
+}
+.logo { animation: logoPulse 4s ease-in-out infinite; }
+
+/* 8. Now-playing and lyrics covers breathe */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.025); }
+}
+.now-cover, .lyrics-cover { animation: breathe 6s ease-in-out infinite; }
+
+/* 9. Equalizer bars on the current song in the queue */
+@keyframes eq {
+  0%, 100% { background-size: 3px 35%, 3px 90%, 3px 55%; }
+  50% { background-size: 3px 100%, 3px 30%, 3px 85%; }
+}
+#queue li.on::after {
+  content: "";
+  position: absolute; right: 12px; top: 50%;
+  width: 16px; height: 14px;
+  transform: translateY(-50%);
+  background:
+    linear-gradient(var(--pink), var(--pink)) 0 100% / 3px 50% no-repeat,
+    linear-gradient(var(--pink), var(--pink)) 50% 100% / 3px 50% no-repeat,
+    linear-gradient(var(--pink), var(--pink)) 100% 100% / 3px 50% no-repeat;
+  border-radius: 2px;
+  animation: eq 1s ease-in-out infinite;
+}
+
+/* 10. Player bar: the pink light line on top breathes */
+@keyframes lineBreathe {
+  0%, 100% { left: 12%; right: 12%; opacity: .5; }
+  50% { left: 4%; right: 4%; opacity: 1; }
+}
+.player::before { animation: lineBreathe 5s ease-in-out infinite; }
+
+/* 11. Play buttons: ripple ring on hover */
+@keyframes ring {
+  from { box-shadow: 0 0 0 0 rgba(255,255,255,.45), 0 0 26px var(--pink-glow); }
+  to { box-shadow: 0 0 0 14px rgba(255,255,255,0), 0 0 26px var(--pink-glow); }
+}
+.controls #playBtn:hover,
+.card .play:hover { animation: ring .9s ease-out infinite; }
+
+/* 12. Active lyric line glows gently */
+@keyframes lyricGlow {
+  0%, 100% { text-shadow: 0 0 26px rgba(244,166,192,.75), 0 0 60px rgba(244,166,192,.35); }
+  50% { text-shadow: 0 0 34px rgba(244,166,192,.95), 0 0 80px rgba(244,166,192,.5); }
+}
+.lyric-line.active { animation: lyricGlow 2.6s ease-in-out infinite; }
+
+/* 13. Seek and volume sliders: thumb grows on hover */
+input[type=range]:hover::-webkit-slider-thumb { transform: scale(1.3); }
+input[type=range]:hover::-moz-range-thumb { transform: scale(1.3); }
+
+/* 14. Search bar lifts when focused */
+#search:focus { transform: translateY(-1px); }
+
+/* 15. Press feedback */
+.controls button:active,
+.controls #playBtn:active,
+.add:active,
+.link:active { transform: scale(.92); }
